@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&"/>
+</head>
+<body>
+    <header>
+        <h1>Por: Ruan M.</h1>
+    </header>
+    <main>
+        <div id="modal-container">
+            <div id="modal-content">
+                <div id="modal-task">
+                    <button onclick="openModal()" id="close"><span class="material-symbols-outlined">close</span></button>
+                    <h2>Adicionar tarefa</h2>
+                    <label for="task-title">Título: </label>
+                    <input type="text" name="task-title" id="task-title">
+                    <label for="">Observação: </label>
+                    <input type="text" name="task-desc" id="task-desc">
+                    <label for="task-priority">Prioridade da tarefa: </label>
+                    <select name="task-priority" id="task-priority">
+                        <option value="Alta">Alta</option>
+                        <option value="Média">Média</option>
+                        <option value="Baixa">Baixa</option>
+                    </select>
+                    <button id="add-task" onclick="addTask()">Adicionar</button>
+                </div>
+
+                <div id="modal-report">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="container-content">
+
+            <div id="control-tasks">
+                <div id="add-filter-tasks">
+                    <button onclick="openFilter()"><span class="material-symbols-outlined">filter_list</span></button>
+                    <div id="filter-content">
+                        <label for="date-input">Data: </label>
+                        <input id="filter-date" name="date-input" type="date">
+
+                        <label for="">Por Prioridade: </label>
+                        <select name="filter-priority" id="filter-priority">
+                            <option value="">Todas</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Média">Média</option>
+                            <option value="Baixa">Baixa</option>
+                        </select>
+                    </div>
+
+                    <button onclick="openModal()"><span class="material-symbols-outlined">add</span></button>
+                </div>
+
+                <div id="report">
+                    <button onclick="seeReport()"><span class="material-symbols-outlined">lab_profile</span></button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <th scope="col">Título</th>
+                    <th scope="col">Observação</th>
+                    <th scope="col">Prioridade</th>
+                    <th scope="col">Data da criação</th>
+                    <th scope="col">Editar</th>
+                </thead>
+                <tbody id="task-table-body">
+                    <tr>
+                        <td id="initial-td" scope="col" colspan="5">
+                            <p>Vazio</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
